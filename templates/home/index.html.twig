@@ -1,0 +1,9 @@
+{% extends 'layouts/defaultLayout.twig' %}
+
+{% block content %}
+    {% include 'components/headerHomepage.twig' %}
+    {% include 'components/mesCompetences.twig' %}
+    {% include 'components/monTravail.twig' %}
+    {% include 'components/monCursus.twig' %}
+    {% include 'components/meContacter.twig' with {'contactForm': contactForm} %}
+{% endblock %}

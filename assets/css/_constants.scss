@@ -1,0 +1,18 @@
+$background-color: #fff;
+$text-color: #22242a;
+$primary-color: #03bdda;
+$secondary-color: #f1255d;
+$third-color: #fb9302;
+$fourth-color: #02a64f;
+$dark-background-color: #3F3E57;
+$dark-background-second-color: #3A394E;
+$error-color: $secondary-color;
+$success-color: $fourth-color;
+$danger-color: $third-color;
+@include font-face(Manjari-Thin, "../fonts/Manjari/Manjari-Thin", null, null, ttf);
+@include font-face(Manjari-Regular, "../fonts/Manjari/Manjari-Regular", null, null, ttf);
+@include font-face(Manjari-Bold, "../fonts/Manjari/Manjari-Bold", null, null, ttf);
+@include font-face(PtSans-Regular, "../fonts/PT_Sans/PTSans-Regular", null, null, ttf);
+@include font-face(PtSans-Bold, "../fonts/PT_Sans/PTSans-Bold", null, null, ttf);
+@include font-face(PtSansNarrow-Regular, "../fonts/PT_Sans_Narrow/PTSansNarrow-Regular", null, null, ttf);
+@include font-face(PtSansNarrow-Bold, "../fonts/PT_Sans_Narrow/PTSansNarrow-Bold", null, null, ttf);

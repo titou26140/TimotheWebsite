@@ -1,0 +1,23 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent!important;
+    z-index: 99;
+    color: $text-color;
+}
+
+.scrolled {
+    background-color: $primary-color!important;
+    color: white!important;
+    transition: all 0.5s;
+
+    .navbar-brand {
+        color: $text-color!important;
+    }
+
+    a {
+        color: white!important;
+        transition: all 0.5s;
+    }
+}

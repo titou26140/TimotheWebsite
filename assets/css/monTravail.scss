@@ -1,0 +1,58 @@
+.monTravail {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    .project-card {
+        background-color: white;
+        width: 300px;
+        border-radius: 10px;
+        padding: 35px;
+
+        .logo-section {
+            text-align: center;
+            height: 150px;
+            padding: 20px;
+
+            img {
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .description-section {
+            margin-top: 40px;
+
+            h3 {
+                color: $text-color;
+                font-family: Manjari-Bold, sans-serif;
+                font-size: 16px;
+            }
+
+            p {
+                color: $dark-background-color;
+                font-size: 12px;
+            }
+        }
+
+        .button-section {
+            text-align: center;
+            margin-top: 40px;
+
+            .btn {
+                background-color: $secondary-color;
+                color: white;
+                border-radius: 10px;
+            }
+        }
+    }
+    .carousel-cell {
+        width: 33%;
+        margin: 20px;
+    }
+    h2 {
+        text-align: center;
+    }
+    .flickity-page-dots {
+        bottom: -25px;
+    }
+}
