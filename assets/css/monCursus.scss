@@ -1,68 +1,89 @@
 .monCursus {
   padding-top: 60px;
+
   .center {
     text-align: center;
   }
+
   .freelance-content {
     background-color: $third-color !important;
+
     p {
       color: white;
     }
+
     h2 {
       color: white !important;
     }
   }
+
   .wiibus-content {
     background-color: black !important;
+
     p {
       color: white;
     }
+
     h2 {
       color: white !important;
     }
   }
+
   .meilleure-visite-content {
     background-color: #192d4a !important;
+
     p {
       color: white;
     }
+
     h2 {
       color: white !important;
     }
   }
+
   .epitech-content {
     background-color: #0068b4 !important;
+
     p {
       color: white;
     }
+
     h2 {
       color: white !important;
     }
   }
+
   .griffith-content {
     background-color: #ed1b24 !important;
+
     p {
       color: white;
     }
+
     h2 {
       color: white !important;
     }
   }
+
   .student-content {
     background-color: $secondary-color !important;
+
     p {
       color: white;
     }
+
     h2 {
       color: white !important;
     }
   }
+
   .cd-container {
     /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
     width: 90%;
     max-width: 1170px;
     margin: 0 auto;
   }
+
   .cd-container::after {
     /* clearfix */
     content: "";
@@ -81,11 +102,13 @@
     text-align: center;
     background: #303e49;
   }
+
   header h1 {
     color: #ffffff;
     font-size: 18px;
     font-size: 1.125rem;
   }
+
   @media only screen and (min-width: 1170px) {
     header {
       height: 300px;
@@ -103,6 +126,7 @@
     margin-top: 2em;
     margin-bottom: 2em;
   }
+
   #cd-timeline::before {
     /* this is the vertical line */
     content: "";
@@ -113,6 +137,7 @@
     width: 4px;
     background: #d7e4ed;
   }
+
   @media only screen and (min-width: 1170px) {
     #cd-timeline {
       margin-top: 3em;
@@ -128,17 +153,21 @@
     position: relative;
     margin: 2em 0;
   }
+
   .cd-timeline-block::after {
     clear: both;
     content: "";
     display: table;
   }
+
   .cd-timeline-block:first-child {
     margin-top: 0;
   }
+
   .cd-timeline-block:last-child {
     margin-bottom: 0;
   }
+
   @media only screen and (min-width: 1170px) {
     .cd-timeline-block {
       margin: 4em 0;
@@ -160,6 +189,7 @@
     border-radius: 50%;
     box-shadow: 0 0 0 4px #ffffff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
   }
+
   .cd-timeline-img img {
     display: block;
     width: 24px;
@@ -171,24 +201,31 @@
     margin-top: -12px;
     object-fit: contain;
   }
+
   .cd-timeline-img.cd-meilleureVisite {
     background: #192d4a;
   }
+
   .cd-timeline-img.cd-wiibus {
     background: white;
   }
+
   .cd-timeline-img.cd-freelance {
     background: $third-color;
   }
+
   .cd-timeline-img.griffith {
     background: #ed1b24;
   }
+
   .cd-timeline-img.cd-epitech {
     background: white;
   }
+
   .cd-timeline-img.student {
     background: $secondary-color;
   }
+
   @media only screen and (min-width: 1170px) {
     .cd-timeline-img {
       width: 60px;
@@ -272,6 +309,7 @@
       transform: scale(1);
     }
   }
+
   .cd-timeline-content {
     position: relative;
     margin-left: 60px;
@@ -280,28 +318,34 @@
     padding: 1em;
     box-shadow: 0 3px 0 #d7e4ed;
   }
+
   .cd-timeline-content::after {
     clear: both;
     content: "";
     display: table;
   }
+
   .cd-timeline-content h2 {
     color: $text-color;
   }
+
   .cd-timeline-content p,
   .cd-timeline-content .cd-read-more,
   .cd-timeline-content .cd-date {
     font-size: 13px;
     font-size: 0.8125rem;
   }
+
   .cd-timeline-content .cd-read-more,
   .cd-timeline-content .cd-date {
     display: inline-block;
   }
+
   .cd-timeline-content p {
     margin: 1em 0;
     line-height: 1.6;
   }
+
   .cd-timeline-content .cd-read-more {
     float: right;
     padding: 0.8em 1em;
@@ -309,14 +353,17 @@
     color: #ffffff;
     border-radius: 0.25em;
   }
+
   .no-touch .cd-timeline-content .cd-read-more:hover {
     background-color: #bac4cb;
   }
+
   .cd-timeline-content .cd-date {
     float: left;
     padding: 0.8em 0;
     opacity: 0.7;
   }
+
   .cd-timeline-content::before {
     content: "";
     position: absolute;
@@ -327,6 +374,7 @@
     border: 7px solid transparent;
     border-right: 7px solid #ffffff;
   }
+
   @media only screen and (min-width: 768px) {
     .cd-timeline-content h2 {
       font-size: 20px !important;
@@ -502,6 +550,19 @@
       -ms-transform: translateX(0);
       -o-transform: translateX(0);
       transform: translateX(0);
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .monCursus {
+    #cd-timeline {
+      h2 {
+        font-size: 20px;
+      }
+      .cd-date {
+        color: white;
+      }
     }
   }
 }

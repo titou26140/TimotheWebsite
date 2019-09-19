@@ -18,6 +18,22 @@
         width: 100px;
         margin-right: 10px;
     }
+
+    .footer-column {
+        display: flex;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .footer-column {
+        display: flex;
+        justify-content: center!important;
+        text-align: center;
+        margin-top: 40px;
+    }
+    .second-footer {
+        font-size: 9px;
+    }
 }
 
 .second-footer {

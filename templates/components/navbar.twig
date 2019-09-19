@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand" href="#">Timothé Duc</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    <a id="menu-button" class="navbar-toggler">
+        <i class="fas fa-align-left"></i>
+    </a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-0 ml-auto">
@@ -24,3 +24,37 @@
         </ul>
     </div>
 </nav>
+
+<div id="menu" class="Absolute-Center">
+    <div class="link-section">
+        <ul>
+            <li><a href="/" onclick="hideMenu()">Accueil</a></li>
+            <li><a href="#mesCompetences" onclick="hideMenu()">Mes compétences</a></li>
+            <li><a href="#monTravail" onclick="hideMenu()">Mon travail</a></li>
+            <li><a href="#monCursus" onclick="hideMenu()">Mon cursus</a></li>
+            <li><a href="#meContacter" onclick="hideMenu()">Me contacter</a></li>
+
+        </ul>
+    </div>
+    <a id="close-button">
+        <img src="{{ asset('/build/images/icons/cross.svg') }}" style="width: 15px; height: auto;">
+    </a>
+</div>
+
+<script>
+    document.getElementById('menu-button').addEventListener('click', openMenu);
+    document.getElementById('close-button').addEventListener('click', hideMenu);
+
+    function openMenu() {
+        const menu = document.getElementById('menu');
+        menu.classList.remove('hide-menu');
+        menu.classList.add('show-menu');
+
+    }
+
+    function hideMenu() {
+        const menu = document.getElementById('menu');
+        menu.classList.remove('show-menu');
+        menu.classList.add('hide-menu');
+    }
+</script>
