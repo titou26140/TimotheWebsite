@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Mail;
 use App\Form\MailType;
 
@@ -12,23 +13,28 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index()
+    public function index(Request $request, \Swift_Mailer $mailer)
     {
         $mail = new Mail();
         $form = $this->createForm(MailType::class, $mail);
 
+        $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()) {
-            // $form->getData() holds the submitted values
-            // but, the original `$task` variable has also been updated
-            $mailData = $form->getData();
-            dump($mailData);
-            exit;
-    
-            // ... perform some action, such as saving the task to the database
-            // for example, if Task is a Doctrine entity, save it!
-            // $entityManager = $this->getDoctrine()->getManager();
-            // $entityManager->persist($task);
-            // $entityManager->flush();
+            $mail = $form->getData();
+            $mail->setDate(new \DateTime());
+            $message = (new \Swift_Message("Site WEB (" . $mail->getEmailFrom() . ") : " . $mail->getObject()))
+                ->setFrom("timotheduc@gmail.com")
+                ->setTo('timotheduc@gmail.com')
+                ->setBody($mail->getContent(),
+                    'text/plain'
+                )
+            ;
+            $mailer->send($message);
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($mail);
+            $entityManager->flush();
             return $this->redirectToRoute('home', ['_fragment' => 'meContacter']);
 
         }
