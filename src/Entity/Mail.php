@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use EWZ\Bundle\RecaptchaBundle\Validator\Constraints as Recaptcha;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MailRepository")
@@ -15,6 +16,12 @@ class Mail
      * @ORM\Column(type="integer")
      */
     private $id;
+
+
+    /**
+     * @Recaptcha\IsTrue
+     */
+    public $recaptcha;
 
     /**
      * @ORM\Column(type="string", length=255)
