@@ -24,19 +24,18 @@ class HomeController extends AbstractController
             $mail = $form->getData();
             $mail->setDate(new \DateTime());
             $message = (new \Swift_Message("Site WEB (" . $mail->getEmailFrom() . ") : " . $mail->getObject()))
-                ->setFrom("timotheduc@gmail.com")
+                ->setFrom("contact@timotheduc.com")
                 ->setTo('timotheduc@gmail.com')
-                ->setBody($mail->getContent(),
+                ->setBody(
+                    $mail->getContent(),
                     'text/plain'
-                )
-            ;
+                );
             $mailer->send($message);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($mail);
             $entityManager->flush();
             return $this->redirectToRoute('home', ['_fragment' => 'meContacter']);
-
         }
 
         return $this->render('home/index.html.twig', [
