@@ -27,7 +27,7 @@ class HomeController extends AbstractController
                 ->setFrom("contact@timotheduc.com")
                 ->setTo('timotheduc@gmail.com')
                 ->setBody(
-                    "Adresse E-mail " . $mail->getEmailFrom() . "\n" . "Objet : \n" . $mail->object . "Message : \n" . "$mail->getContent(),
+                    "Adresse E-mail " . $mail->getEmailFrom() . "\n" . "Objet : \n" . $mail->object . "Message : \n" . $mail->getContent(),
                     'text/plain'
                 );
             $mailer->send($message);
